@@ -1,0 +1,119 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('player/index')}">球员列表</a></li>
+			<li class="active"><a href="{:U('player/add')}">添加球员</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('player/add_post')}">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">球员姓名</label>
+					<div class="controls">
+						<input type="text" name="player_name">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">球员英文全称</label>
+					<div class="controls">
+						<input type="text" name="full_name">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">球员身高</label>
+					<div class="controls">
+						<input type="text" name="player_height">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">球员体重</label>
+					<div class="controls">
+						<input type="text" name="player_weight">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">球员位置</label>
+					<div class="controls">
+						<input type="text" name="player_place">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">球员生日</label>
+					<div class="controls">
+						<input type="text" name="player_brithday">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">出生城市</label>
+					<div class="controls">
+						<input type="text" name="player_city">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">毕业学校</label>
+					<div class="controls">
+						<input type="text" name="player_college">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">球衣号码</label>
+					<div class="controls">
+						<input type="text" name="player_number">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">选秀情况</label>
+					<div class="controls">
+						<input type="text" name="player_draft">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">当前年薪</label>
+					<div class="controls">
+						<input type="text" name="player_salary">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">球员头像</label>
+					<div class="controls">
+						<input type="text" name="player_image" id="js-link-image"> <a href="javascript:upload_one_image('图片上传','#js-link-image');">上传图片</a>
+					</div>
+				</div>
+				<!-- <div class="control-group">
+					<label class="control-label">{:L('LINK_TARGET')}</label>
+					<div class="controls">
+						<select name="link_target">
+							<foreach name="targets" item="vo">
+							<option value="{$key}">{$vo}</option>
+							</foreach>
+						</select>
+					</div>
+				</div> -->
+				<!-- <div class="control-group">
+					<label class="control-label">{:L('LINK_DESCRIPTION')}</label>
+					<div class="controls">
+						<textarea name="link_description" rows="5" cols="57"></textarea>
+					</div>
+				</div> -->
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary js-ajax-submit">{:L('ADD')}</button>
+				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>
