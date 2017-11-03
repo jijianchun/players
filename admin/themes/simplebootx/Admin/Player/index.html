@@ -32,11 +32,11 @@
 						<!-- <td><input name='listorders[{$vo.link_id}]' class="input input-order mr5" type='text' size='3' value='{$vo.listorder}'></td> -->
 						<td>{$vo.player_id}</td>
 						<td>{$vo.full_name}</td>
-						<td><img src="{:sp_get_image_preview_url($vo[player_image])}" /></td>
+						<td><img src="{:sp_get_image_preview_url($vo[player_image])}" width="75" height="75" /></td>
 						<td>{$vo.player_college}</td>
 						<td>{$vo.player_place}</td>
 						<td>
-							<a href="{:U('link/edit',array('id'=>$vo['link_id']))}">{:L('EDIT')}</a>|
+							<a href="{:U('player/edit',array('id'=>$vo['player_id']))}">{:L('EDIT')}</a>|
 							<a href="{:U('link/delete',array('id'=>$vo['link_id']))}" class="js-ajax-delete">{:L('DELETE')}</a>
 						</td>
 					</tr>

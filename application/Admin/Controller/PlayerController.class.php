@@ -48,23 +48,22 @@ class PlayerController extends AdminbaseController{
 	// 友情链接编辑
 	public function edit(){
 		$id=I("get.id",0,'intval');
-		$link=$this->link_model->where(array('link_id'=>$id))->find();
-		$this->assign($link);
-		$this->assign("targets",$this->targets);
+		$player=$this->player_model->where(array('player_id'=>$id))->find();
+		$this->assign($player);
 		$this->display();
 	}
 	
 	// 友情链接编辑
 	public function edit_post(){
 		if (IS_POST) {
-			if ($this->link_model->create()!==false) {
-				if ($this->link_model->save()!==false) {
+			if ($this->player_model->create()!==false) {
+				if ($this->player_model->save()!==false) {
 					$this->success("保存成功！");
 				} else {
 					$this->error("保存失败！");
 				}
 			} else {
-				$this->error($this->link_model->getError());
+				$this->error($this->player_model->getError());
 			}
 		}
 	}
