@@ -45,7 +45,7 @@ class PlayerController extends AdminbaseController{
 		}
 	}
 	
-	// 友情链接编辑
+	// 球员信息编辑
 	public function edit(){
 		$id=I("get.id",0,'intval');
 		$player=$this->player_model->where(array('player_id'=>$id))->find();
@@ -53,7 +53,7 @@ class PlayerController extends AdminbaseController{
 		$this->display();
 	}
 	
-	// 友情链接编辑
+	// 球员信息编辑提交
 	public function edit_post(){
 		if (IS_POST) {
 			if ($this->player_model->create()!==false) {
@@ -78,13 +78,13 @@ class PlayerController extends AdminbaseController{
 		}
 	}
 	
-	// 友情链接删除
+	// 球员删除
 	public function delete(){
 		if(isset($_POST['ids'])){
 			
 		}else{
 			$id = I("get.id",0,'intval');
-			if ($this->link_model->delete($id)!==false) {
+			if ($this->player_model->delete($id)!==false) {
 				$this->success("删除成功！");
 			} else {
 				$this->error("删除失败！");
