@@ -52,4 +52,13 @@ class IndexController extends HomebaseController{
 		echo json_encode($new_player);exit;
 	}
 
+	// 根据球员ID精确查找
+	function findById(){
+		$id = I('get.id');
+		$player_model = D("Common/Players");
+		$player = $player_model->where("`player_id`='$id'")->find();
+
+		echo json_encode($player);exit;
+	}
+
 }
