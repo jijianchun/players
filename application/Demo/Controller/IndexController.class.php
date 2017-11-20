@@ -58,7 +58,17 @@ class IndexController extends HomebaseController{
 		$player_model = D("Common/Players");
 		$player = $player_model->where("`player_id`='$id'")->find();
 
-		echo json_encode($player);exit;
+		$new_player = array();
+		foreach($player as $key=>$value){
+			if($key == 'player_image'){
+				$new_player[$key] = sp_get_image_url($value);
+			}else{
+				$new_player[$key] = $value;
+			}
+			
+		}
+
+		echo json_encode($new_player);exit;
 	}
 
 }
