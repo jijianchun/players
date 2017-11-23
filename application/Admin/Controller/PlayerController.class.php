@@ -29,10 +29,12 @@ class PlayerController extends AdminbaseController{
 	
 	// 友情链接添加提交
 	public function add_post(){
-		/*echo '<pre>';
-		print_r($_POST);exit;*/
+		
 		if(IS_POST){
-			if ($this->player_model->create()!==false) {
+
+			echo I('post.player_city');exit;
+
+			/*if ($this->player_model->create()!==false) {
 				if ($this->player_model->add()!==false) {
 					$this->success("添加成功！", U("player/index"));
 				} else {
@@ -40,7 +42,7 @@ class PlayerController extends AdminbaseController{
 				}
 			} else {
 				$this->error($this->player_model->getError());
-			}
+			}*/
 		
 		}
 	}
